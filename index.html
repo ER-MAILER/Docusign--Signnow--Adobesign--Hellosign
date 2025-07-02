@@ -28,6 +28,7 @@
             background-color: #f5f5f5;
             color: #333;
             line-height: 1.6;
+            overflow-x: hidden;
         }
         
         header {
@@ -44,6 +45,7 @@
             width: 90%;
             max-width: 1200px;
             margin: 0 auto;
+            padding: 0 15px;
         }
         
         nav {
@@ -53,7 +55,7 @@
         }
         
         .logo {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             font-weight: 700;
             color: white;
             text-decoration: none;
@@ -73,10 +75,11 @@
         .nav-links {
             display: flex;
             list-style: none;
+            transition: var(--transition);
         }
         
         .nav-links li {
-            margin-left: 2rem;
+            margin-left: 1.5rem;
         }
         
         .nav-links a {
@@ -85,6 +88,7 @@
             font-weight: 500;
             transition: var(--transition);
             position: relative;
+            font-size: 1rem;
         }
         
         .nav-links a:hover {
@@ -110,7 +114,7 @@
             display: inline-block;
             background-color: var(--secondary);
             color: white;
-            padding: 0.8rem 1.8rem;
+            padding: 0.7rem 1.5rem;
             border-radius: 4px;
             text-decoration: none;
             font-weight: 500;
@@ -119,6 +123,8 @@
             cursor: pointer;
             text-align: center;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            font-size: 0.95rem;
+            white-space: nowrap;
         }
         
         .btn:hover {
@@ -134,7 +140,7 @@
         .hero {
             background: linear-gradient(135deg, var(--primary), #34495e);
             color: white;
-            padding: 6rem 0;
+            padding: 5rem 0;
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -151,36 +157,38 @@
         }
         
         .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
+            font-size: 2.2rem;
+            margin-bottom: 1.2rem;
             position: relative;
             animation: fadeInDown 1s ease;
+            line-height: 1.3;
         }
         
         .hero p {
-            font-size: 1.3rem;
+            font-size: 1.1rem;
             max-width: 700px;
-            margin: 0 auto 3rem;
+            margin: 0 auto 2.5rem;
             opacity: 0.9;
             position: relative;
             animation: fadeInUp 1s ease;
+            padding: 0 15px;
         }
         
         .products {
-            padding: 6rem 0;
+            padding: 4rem 0;
         }
         
         .section-title {
             text-align: center;
-            margin-bottom: 4rem;
+            margin-bottom: 3rem;
         }
         
         .section-title h2 {
-            font-size: 2.5rem;
+            font-size: 2rem;
             color: var(--dark);
             position: relative;
             display: inline-block;
-            padding-bottom: 1rem;
+            padding-bottom: 0.8rem;
         }
         
         .section-title h2::after {
@@ -189,8 +197,8 @@
             bottom: 0;
             left: 50%;
             transform: translateX(-50%);
-            width: 100px;
-            height: 4px;
+            width: 80px;
+            height: 3px;
             background-color: var(--secondary);
             border-radius: 2px;
         }
@@ -199,62 +207,79 @@
             color: var(--gray);
             max-width: 700px;
             margin: 1rem auto 0;
+            padding: 0 15px;
+            font-size: 0.95rem;
         }
         
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
         }
         
         .product-card {
             background-color: white;
-            border-radius: 10px;
+            border-radius: 8px;
             overflow: hidden;
             box-shadow: var(--shadow);
             transition: var(--transition);
             position: relative;
+            margin: 0 auto;
+            max-width: 350px;
         }
         
         .product-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.15);
         }
         
         .product-img {
-            height: 220px;
+            height: 200px;
             background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 4rem;
-            color: var(--primary);
             position: relative;
         }
         
-        .product-img i {
-            opacity: 0.8;
+        .product-img img {
+            max-width: 150px;
+            max-height: 80px;
+            object-fit: contain;
         }
         
         .product-content {
-            padding: 2rem;
+            padding: 1.5rem;
             position: relative;
         }
         
         .product-content h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
             color: var(--dark);
         }
         
         .product-content p {
             color: var(--gray);
-            margin-bottom: 1.5rem;
-            font-size: 1rem;
+            margin-bottom: 1.2rem;
+            font-size: 0.95rem;
+        }
+        
+        .product-stats {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+        
+        .product-stats span {
+            color: var(--secondary);
+            font-weight: 600;
         }
         
         .product-details {
-            margin: 1.5rem 0;
+            margin: 1.2rem 0;
         }
         
         .product-details ul {
@@ -262,10 +287,11 @@
         }
         
         .product-details li {
-            margin-bottom: 0.8rem;
+            margin-bottom: 0.6rem;
             color: var(--gray);
             position: relative;
-            padding-left: 1.8rem;
+            padding-left: 1.5rem;
+            font-size: 0.9rem;
         }
         
         .product-details li::before {
@@ -276,26 +302,29 @@
             left: 0;
             top: 0;
             color: var(--secondary);
+            font-size: 0.9rem;
         }
         
         .features {
-            padding: 6rem 0;
+            padding: 4rem 0;
             background-color: var(--light);
         }
         
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
         }
         
         .feature-card {
             background-color: white;
-            padding: 2rem;
-            border-radius: 10px;
+            padding: 1.5rem;
+            border-radius: 8px;
             box-shadow: var(--shadow);
             text-align: center;
             transition: var(--transition);
+            margin: 0 auto;
+            max-width: 320px;
         }
         
         .feature-card:hover {
@@ -303,49 +332,51 @@
         }
         
         .feature-icon {
-            font-size: 2.8rem;
+            font-size: 2.5rem;
             color: var(--secondary);
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.2rem;
             display: inline-block;
         }
         
         .feature-card h3 {
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
             color: var(--dark);
-            font-size: 1.3rem;
+            font-size: 1.2rem;
         }
         
         .feature-card p {
             color: var(--gray);
-            font-size: 1rem;
+            font-size: 0.95rem;
         }
         
         .pricing {
-            padding: 6rem 0;
+            padding: 4rem 0;
             background: linear-gradient(to bottom, #f9f9f9 0%, #ffffff 100%);
         }
         
         .pricing-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2.5rem;
-            margin-top: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
         }
         
         .pricing-card {
             background-color: white;
-            border-radius: 10px;
-            padding: 2.5rem;
+            border-radius: 8px;
+            padding: 2rem;
             box-shadow: var(--shadow);
             text-align: center;
             transition: var(--transition);
             position: relative;
             overflow: hidden;
+            margin: 0 auto;
+            max-width: 350px;
         }
         
         .pricing-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
         }
         
         .pricing-card.popular {
@@ -354,45 +385,46 @@
         
         .popular-tag {
             position: absolute;
-            top: 0;
-            right: 0;
+            top: 15px;
+            right: -30px;
             background-color: var(--secondary);
             color: white;
-            padding: 0.3rem 1.5rem;
+            padding: 0.3rem 2.5rem;
             font-size: 0.8rem;
             font-weight: 600;
-            transform: translateY(-50%) rotate(15deg);
+            transform: rotate(45deg);
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
         
         .pricing-card h3 {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             color: var(--primary);
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.2rem;
         }
         
         .price {
-            font-size: 3rem;
+            font-size: 2.2rem;
             color: var(--secondary);
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.2rem;
             font-weight: 700;
         }
         
         .price span {
-            font-size: 1rem;
+            font-size: 0.9rem;
             color: var(--gray);
             font-weight: normal;
         }
         
         .pricing-features {
             list-style: none;
-            margin-bottom: 2.5rem;
+            margin-bottom: 2rem;
         }
         
         .pricing-features li {
-            padding: 0.8rem 0;
+            padding: 0.6rem 0;
             border-bottom: 1px solid #eee;
             color: var(--gray);
+            font-size: 0.9rem;
         }
         
         .pricing-features li:last-child {
@@ -400,21 +432,22 @@
         }
         
         .download-center {
-            padding: 6rem 0;
+            padding: 4rem 0;
             text-align: center;
         }
         
         .download-table {
             width: 100%;
-            margin: 3rem 0;
+            margin: 2rem 0;
             border-collapse: collapse;
             box-shadow: var(--shadow);
-            border-radius: 10px;
+            border-radius: 8px;
             overflow: hidden;
+            font-size: 0.9rem;
         }
         
         .download-table th, .download-table td {
-            padding: 1.2rem;
+            padding: 0.8rem;
             text-align: left;
             border-bottom: 1px solid #eee;
         }
@@ -434,14 +467,14 @@
         }
         
         .password-note {
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             color: var(--gray);
-            margin-top: 0.5rem;
+            margin-top: 0.3rem;
             font-style: italic;
         }
         
         .contact {
-            padding: 6rem 0;
+            padding: 4rem 0;
             background-color: var(--primary);
             color: white;
         }
@@ -452,18 +485,18 @@
         
         .whatsapp-container {
             text-align: center;
-            margin-top: 3rem;
-            padding: 3rem;
+            margin-top: 2rem;
+            padding: 2rem;
             background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
+            border-radius: 8px;
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
         }
         
         .whatsapp-container p {
-            margin-bottom: 1.5rem;
-            font-size: 1.2rem;
+            margin-bottom: 1.2rem;
+            font-size: 1rem;
             opacity: 0.9;
         }
         
@@ -471,12 +504,12 @@
             display: inline-block;
             background-color: #25D366;
             color: white;
-            padding: 1rem 2rem;
+            padding: 0.8rem 1.5rem;
             border-radius: 4px;
             text-decoration: none;
             font-weight: 500;
             transition: var(--transition);
-            font-size: 1.1rem;
+            font-size: 1rem;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
         
@@ -493,22 +526,22 @@
         footer {
             background-color: #1a252f;
             color: white;
-            padding: 4rem 0 1rem;
+            padding: 3rem 0 1rem;
         }
         
         .footer-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 2.5rem;
-            margin-bottom: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
         }
         
         .footer-column h3 {
-            font-size: 1.3rem;
-            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+            margin-bottom: 1.2rem;
             color: var(--secondary);
             position: relative;
-            padding-bottom: 0.8rem;
+            padding-bottom: 0.6rem;
         }
         
         .footer-column h3::after {
@@ -516,7 +549,7 @@
             position: absolute;
             bottom: 0;
             left: 0;
-            width: 50px;
+            width: 40px;
             height: 2px;
             background-color: var(--secondary);
         }
@@ -526,7 +559,7 @@
         }
         
         .footer-links li {
-            margin-bottom: 0.8rem;
+            margin-bottom: 0.6rem;
         }
         
         .footer-links a {
@@ -534,6 +567,7 @@
             text-decoration: none;
             transition: var(--transition);
             display: inline-block;
+            font-size: 0.9rem;
         }
         
         .footer-links a:hover {
@@ -542,27 +576,29 @@
         }
         
         .footer-links a i {
-            margin-right: 8px;
-            width: 20px;
+            margin-right: 6px;
+            width: 16px;
             text-align: center;
+            font-size: 0.8rem;
         }
         
         .social-links {
             display: flex;
-            gap: 1rem;
-            margin-top: 1.5rem;
+            gap: 0.8rem;
+            margin-top: 1.2rem;
         }
         
         .social-links a {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 40px;
-            height: 40px;
+            width: 36px;
+            height: 36px;
             background-color: rgba(255, 255, 255, 0.1);
             color: white;
             border-radius: 50%;
             transition: var(--transition);
+            font-size: 0.9rem;
         }
         
         .social-links a:hover {
@@ -572,10 +608,53 @@
         
         .copyright {
             text-align: center;
-            padding-top: 2rem;
+            padding-top: 1.5rem;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             color: #7f8c8d;
-            font-size: 0.9rem;
+            font-size: 0.8rem;
+        }
+        
+        /* Mobile Menu */
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: white;
+            z-index: 101;
+        }
+        
+        /* Stats Counter */
+        .stats-container {
+            background-color: var(--primary);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .stat-card {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.9;
         }
         
         /* Animations */
@@ -604,54 +683,135 @@
         /* Responsive styles */
         @media (max-width: 992px) {
             .hero h1 {
-                font-size: 2.5rem;
+                font-size: 2rem;
             }
             
             .hero p {
-                font-size: 1.1rem;
+                font-size: 1rem;
+            }
+            
+            .products-grid, .features-grid, .pricing-grid {
+                gap: 1.5rem;
             }
         }
         
         @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            
             .nav-links {
-                display: none;
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                max-width: 300px;
+                height: 100vh;
+                background-color: var(--dark);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                padding: 2rem;
+                transition: var(--transition);
+            }
+            
+            .nav-links.active {
+                right: 0;
+            }
+            
+            .nav-links li {
+                margin: 1rem 0;
+            }
+            
+            .nav-links a {
+                font-size: 1.2rem;
             }
             
             .hero {
-                padding: 4rem 0;
+                padding: 3.5rem 0;
             }
             
             .hero h1 {
-                font-size: 2rem;
+                font-size: 1.8rem;
             }
             
             .section-title h2 {
-                font-size: 2rem;
+                font-size: 1.8rem;
             }
             
             .products, .features, .pricing, .download-center, .contact {
-                padding: 4rem 0;
+                padding: 3rem 0;
             }
             
             .whatsapp-container {
-                padding: 2rem;
+                padding: 1.5rem;
+            }
+            
+            .download-table {
+                font-size: 0.8rem;
+            }
+            
+            .download-table th, .download-table td {
+                padding: 0.6rem;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
             }
         }
         
         @media (max-width: 576px) {
             .hero h1 {
-                font-size: 1.8rem;
+                font-size: 1.6rem;
             }
             
             .section-title h2 {
-                font-size: 1.8rem;
+                font-size: 1.6rem;
             }
             
             .price {
-                font-size: 2.5rem;
+                font-size: 2rem;
             }
             
-            .pricing-grid {
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .download-table {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+            
+            .logo {
+                font-size: 1.3rem;
+            }
+            
+            .btn {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.9rem;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 400px) {
+            .hero h1 {
+                font-size: 1.4rem;
+            }
+            
+            .hero p {
+                font-size: 0.95rem;
+            }
+            
+            .btn {
+                padding: 0.5rem 1rem;
+                font-size: 0.85rem;
+            }
+            
+            .products-grid, .features-grid, .pricing-grid {
                 grid-template-columns: 1fr;
             }
         }
@@ -662,6 +822,9 @@
         <div class="container">
             <nav>
                 <a href="index.html" class="logo"><i class="fas fa-envelope"></i>ER<span>MAILER</span></a>
+                <div class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
                 <ul class="nav-links">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#products">Products</a></li>
@@ -691,11 +854,15 @@
             <div class="products-grid">
                 <div class="product-card">
                     <div class="product-img">
-                        <i class="fas fa-file-signature"></i>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/DocuSign_logo.svg/2560px-DocuSign_logo.svg.png" alt="DocuSign Logo">
                     </div>
                     <div class="product-content">
                         <h3>ER Docusign Mailer</h3>
                         <p>Complete solution for DocuSign integration with advanced document management features.</p>
+                        <div class="product-stats">
+                            <div>Users: <span>1,850+</span></div>
+                            <div>Version: <span>2.1</span></div>
+                        </div>
                         <div class="product-details">
                             <ul>
                                 <li>Bulk document sending</li>
@@ -711,11 +878,15 @@
                 
                 <div class="product-card">
                     <div class="product-img">
-                        <i class="fas fa-signature"></i>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/SignNow_logo.svg/1200px-SignNow_logo.svg.png" alt="SignNow Logo">
                     </div>
                     <div class="product-content">
                         <h3>ER SignNow Mailer</h3>
                         <p>Powerful SignNow integration with bulk sending and automated workflows.</p>
+                        <div class="product-stats">
+                            <div>Users: <span>1,680+</span></div>
+                            <div>Version: <span>2.0</span></div>
+                        </div>
                         <div class="product-details">
                             <ul>
                                 <li>Automated workflows</li>
@@ -731,11 +902,15 @@
                 
                 <div class="product-card">
                     <div class="product-img">
-                        <i class="fab fa-adobe"></i>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Adobe_Acrobat_DC_logo_2020.svg/1200px-Adobe_Acrobat_DC_logo_2020.svg.png" alt="Adobe Sign Logo">
                     </div>
                     <div class="product-content">
                         <h3>ER AdobeSign Mailer</h3>
                         <p>Seamless Adobe Sign integration with template management and tracking.</p>
+                        <div class="product-stats">
+                            <div>Users: <span>1,580+</span></div>
+                            <div>Version: <span>1.9</span></div>
+                        </div>
                         <div class="product-details">
                             <ul>
                                 <li>Drag-and-drop editor</li>
@@ -751,11 +926,15 @@
                 
                 <div class="product-card">
                     <div class="product-img">
-                        <i class="fas fa-sign"></i>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/HelloSign_logo.svg/2560px-HelloSign_logo.svg.png" alt="HelloSign Logo">
                     </div>
                     <div class="product-content">
                         <h3>ER HelloSign Mailer</h3>
                         <p>Efficient HelloSign integration with drag-and-drop functionality.</p>
+                        <div class="product-stats">
+                            <div>Users: <span>1,620+</span></div>
+                            <div>Version: <span>2.2</span></div>
+                        </div>
                         <div class="product-details">
                             <ul>
                                 <li>Embedded signing</li>
@@ -767,6 +946,29 @@
                         </div>
                         <a href="#hellosign-download" class="btn">Download Now</a>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats-container">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">7,000+</div>
+                    <div class="stat-label">Total Downloads</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">4.8/5</div>
+                    <div class="stat-label">Average Rating</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">95%</div>
+                    <div class="stat-label">Customer Satisfaction</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Support Available</div>
                 </div>
             </div>
         </div>
@@ -873,14 +1075,16 @@
                         <th>Product</th>
                         <th>Version</th>
                         <th>Release Date</th>
+                        <th>Users</th>
                         <th>Download</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr id="docusign-download">
                         <td>ER-Docusign-Mailer</td>
-                        <td>v2.0</td>
+                        <td>v2.1</td>
                         <td>2023-10-15</td>
+                        <td>1,850+</td>
                         <td>
                             <a href="https://drive.google.com/file/d/DOCUSIGN_LINK/view" class="btn" target="_blank">Download</a>
                             <div class="password-note">ZIP Password: Provided after installation</div>
@@ -890,6 +1094,7 @@
                         <td>ER-SignNow-Mailer</td>
                         <td>v2.0</td>
                         <td>2023-09-28</td>
+                        <td>1,680+</td>
                         <td>
                             <a href="https://drive.google.com/file/d/SIGNNOW_LINK/view" class="btn" target="_blank">Download</a>
                             <div class="password-note">ZIP Password: Provided after installation</div>
@@ -897,8 +1102,9 @@
                     </tr>
                     <tr id="adobesign-download">
                         <td>ER-AdobeSign-Mailer</td>
-                        <td>v2.0</td>
+                        <td>v1.9</td>
                         <td>2023-11-02</td>
+                        <td>1,580+</td>
                         <td>
                             <a href="https://drive.google.com/file/d/ADOBESIGN_LINK/view" class="btn" target="_blank">Download</a>
                             <div class="password-note">ZIP Password: Provided after installation</div>
@@ -906,8 +1112,9 @@
                     </tr>
                     <tr id="hellosign-download">
                         <td>ER-HelloSign-Mailer</td>
-                        <td>v2.0</td>
+                        <td>v2.2</td>
                         <td>2023-08-20</td>
+                        <td>1,620+</td>
                         <td>
                             <a href="https://drive.google.com/file/d/HELLOSIGN_LINK/view" class="btn" target="_blank">Download</a>
                             <div class="password-note">ZIP Password: Provided after installation</div>
@@ -990,6 +1197,26 @@
     </footer>
 
     <script>
+        // Mobile menu toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            menuToggle.innerHTML = navLinks.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                    menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+                }
+            });
+        });
+        
         // Smooth scrolling for all links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
@@ -1000,7 +1227,7 @@
                 
                 if (targetElement) {
                     window.scrollTo({
-                        top: targetElement.offsetTop - 80,
+                        top: targetElement.offsetTop - 70,
                         behavior: 'smooth'
                     });
                     
@@ -1016,7 +1243,7 @@
         
         // Add animation to elements when they come into view
         const animateOnScroll = () => {
-            const elements = document.querySelectorAll('.product-card, .feature-card, .pricing-card');
+            const elements = document.querySelectorAll('.product-card, .feature-card, .pricing-card, .stat-card');
             
             elements.forEach(element => {
                 const elementPosition = element.getBoundingClientRect().top;
@@ -1030,7 +1257,7 @@
         };
         
         // Set initial state for animated elements
-        document.querySelectorAll('.product-card, .feature-card, .pricing-card').forEach(element => {
+        document.querySelectorAll('.product-card, .feature-card, .pricing-card, .stat-card').forEach(element => {
             element.style.opacity = '0';
             element.style.transform = 'translateY(20px)';
             element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
@@ -1044,7 +1271,7 @@
         document.querySelectorAll('.pricing-card').forEach(card => {
             card.addEventListener('mouseenter', () => {
                 if (!card.classList.contains('popular')) {
-                    card.style.transform = 'translateY(-10px)';
+                    card.style.transform = 'translateY(-8px)';
                 }
             });
             
@@ -1054,6 +1281,61 @@
                 }
             });
         });
+        
+        // Animate stats counter
+        function animateStats() {
+            const statNumbers = document.querySelectorAll('.stat-number');
+            const duration = 2000;
+            const startValues = [0, 0, 0, 0];
+            const endValues = [7000, 4.8, 95, 24];
+            const increments = [70, 0.048, 0.95, 0.24];
+            let startTime = null;
+            
+            function updateStats(timestamp) {
+                if (!startTime) startTime = timestamp;
+                const progress = Math.min((timestamp - startTime) / duration, 1);
+                
+                statNumbers.forEach((stat, index) => {
+                    let value;
+                    if (index === 1) { // For rating (4.8)
+                        value = progress * endValues[index];
+                    } else {
+                        value = Math.floor(progress * endValues[index]);
+                    }
+                    
+                    if (index === 2) { // For percentage (95%)
+                        stat.textContent = value + '%';
+                    } else if (index === 1) { // For rating (4.8)
+                        stat.textContent = value.toFixed(1) + '/5';
+                    } else if (index === 3) { // For support (24/7)
+                        stat.textContent = '24/7';
+                    } else {
+                        stat.textContent = value.toLocaleString() + '+';
+                    }
+                });
+                
+                if (progress < 1) {
+                    requestAnimationFrame(updateStats);
+                }
+            }
+            
+            requestAnimationFrame(updateStats);
+        }
+        
+        // Run stats animation when stats section comes into view
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateStats();
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        const statsSection = document.querySelector('.stats-container');
+        if (statsSection) {
+            statsObserver.observe(statsSection);
+        }
     </script>
 </body>
 </html>
